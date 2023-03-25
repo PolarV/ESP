@@ -2427,7 +2427,14 @@ local function UpdatePlayerData()
 								Character:FindFirstChild'Left Arm' or Character:FindFirstChild'LeftLowerArm';
 								Character:FindFirstChild'Right Arm' or Character:FindFirstChild'RightLowerArm';
 							}
-							Box:Update(HumanoidRootPart.CFrame, V3New(2, 3, 1) * (Scale * 2), Color, nil, shared.am_ic3 and Body);
+
+							local Nam = nil
+							if _G.Whitelisted[v.Name] ~= nil then
+								Nam		= Color
+								else
+									Nam = Color3.fromRGB(255, 0, 0);
+							end
+							Box:Update(HumanoidRootPart.CFrame, V3New(2, 3, 1) * (Scale * 2), Nam, nil, shared.am_ic3 and Body);
 						else
 							Box:SetVisible(false);
 						end
