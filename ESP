@@ -2361,8 +2361,8 @@ local function UpdatePlayerData()
 							NameTag.Size		= Options.TextSize.Value;
 							NameTag.Outline		= Options.TextOutline.Value;
 							NameTag.Position	= V2New(ScreenPositionUpper.X, ScreenPositionUpper.Y) - V2New(0, NameTag.TextBounds.Y);
-							NameTag.Color		= Whitedlisted[v.Text] and Color or Color3.fromRGB(255, 0, 0);
-							NameTag.Color		= Whitedlisted[v.Text] and Color or Color3.fromRGB(255, 0, 0);
+							NameTag.Color		= Whitedlisted[v.Name] and Color or Color3.fromRGB(255, 0, 0);
+							NameTag.Color		= Whitedlisted[v.Name] and Color or Color3.fromRGB(255, 0, 0);
 							NameTag.OutlineColor= Color3.new(0.05, 0.05, 0.05);
 							NameTag.Transparency= 0.85;
 							if Drawing.Fonts and shared.am_ic3 then -- CURRENTLY SYNAPSE ONLY :MEGAHOLY:
