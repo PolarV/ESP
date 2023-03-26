@@ -923,7 +923,15 @@ function LineBox:Create(Properties)
 			Outline.Visible = Vs;
 			Square.Visible = Vs;
 			Square.Position = V2New(xMin, yMin);
-			Square.Color	= Color;
+
+			local Nam = nil
+							if _G.Whitelisted[v.Name] ~= nil then
+								Nam		= Color
+								else
+									Nam = Color3.fromRGB(255, 0, 0);
+							end
+			
+			Square.Color	= Nam;
 			Square.Thickness = math.floor(Outline.Thickness * 0.3);
 			-- Square.Position = V2New(xMin, yMin);
 			Square.Size = V2New(xSize, ySize);
