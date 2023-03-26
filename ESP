@@ -2208,7 +2208,15 @@ local function UpdatePlayerData()
 						Tracer.Visible	= true;
 						Tracer.From		= TracerPosition;
 						Tracer.To		= V2New(Position.X, Position.Y);
-						Tracer.Color	= Whitedlisted[v.Text] and Color or Color3.fromRGB(255, 0, 0);
+
+						local Nam = nil
+							if _G.Whitelisted[v.Name] ~= nil then
+								Nam		= Color
+								else
+									Nam = Color3.fromRGB(255, 0, 0);
+							end
+
+						Tracer.Color	= Nam;
 						OutlineTracer.Visible = true;
 						OutlineTracer.Transparency = Tracer.Transparency - 0.1;
 						OutlineTracer.From = Tracer.From;
@@ -2349,7 +2357,15 @@ local function UpdatePlayerData()
 						Tracer.Transparency = math.clamp(1 - (Distance / 200), 0.25, 0.75);
 						Tracer.From		= TracerPosition;
 						Tracer.To		= V2New(Position.X, Position.Y);
-						Tracer.Color	= Color;
+						
+						local Nam = nil
+							if _G.Whitelisted[v.Name] ~= nil then
+								Nam		= Color
+								else
+									Nam = Color3.fromRGB(255, 0, 0);
+						end
+
+						Tracer.Color	= Nam;
 						OutlineTracer.From = Tracer.From;
 						OutlineTracer.To = Tracer.To;
 						OutlineTracer.Transparency = Tracer.Transparency - 0.15;
